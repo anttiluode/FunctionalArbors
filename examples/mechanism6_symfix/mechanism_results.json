@@ -1,0 +1,1850 @@
+{
+  "args": {
+    "size": 30,
+    "seeds": 6,
+    "seed_start": 0,
+    "lag": 10,
+    "pulse": 6,
+    "trial_len": 240,
+    "pairs": 10,
+    "epochs": 2,
+    "budget": 0.45,
+    "noise": 0.12,
+    "credit_strength": 5.0,
+    "path_penalty": 12.0,
+    "tube_radius": 1.25,
+    "arms": "reward,shuffle",
+    "out": "examples/mechanism6_symfix"
+  },
+  "summary": {
+    "reward": {
+      "actual_edge50_mean": 11.5,
+      "actual_edge50_sd": 3.8858718455450894,
+      "actual_common25_mean": 10.333333333333334,
+      "actual_common25_sd": 5.08592829940284,
+      "length_diff_mean": -2.0710678118654755,
+      "length_diff_sd": 0.4537482234726354,
+      "tortuosity_diff_mean": -0.3451779686441883,
+      "tortuosity_diff_sd": 0.07562470391209332,
+      "slowness_diff_mean": 3.4537277341353345,
+      "slowness_diff_sd": 0.7846102563931808,
+      "geometry_component_mean": -3.3846879347082584,
+      "geometry_component_sd": 0.7313164304978371,
+      "speed_component_mean": 6.838415668842619,
+      "speed_component_sd": 0.7665403902877502,
+      "geometry_only_edge50_mean": -11.666666666666666,
+      "geometry_only_edge50_sd": 1.2110601416389968,
+      "speed_only_edge50_mean": 15.666666666666666,
+      "speed_only_edge50_sd": 2.422120283277993,
+      "both_edge50_mean": 3.3333333333333335,
+      "both_edge50_sd": 3.8815804341359033
+    },
+    "shuffle": {
+      "actual_edge50_mean": 1.1666666666666667,
+      "actual_edge50_sd": 3.65604522218567,
+      "actual_common25_mean": 0.8333333333333334,
+      "actual_common25_sd": 4.9564772436345015,
+      "length_diff_mean": 0.138071187457698,
+      "length_diff_sd": 1.5200377364015145,
+      "tortuosity_diff_mean": 0.023011864576279146,
+      "tortuosity_diff_sd": 0.25333962273354355,
+      "slowness_diff_mean": -0.007472077893867575,
+      "slowness_diff_sd": 2.2286403506101613,
+      "geometry_component_mean": 0.24760946891961164,
+      "geometry_component_sd": 2.3819804759040357,
+      "speed_component_mean": -0.2550815468134349,
+      "speed_component_sd": 4.5609023109269815,
+      "geometry_only_edge50_mean": 1.3333333333333333,
+      "geometry_only_edge50_sd": 8.164965809277259,
+      "speed_only_edge50_mean": -1.5,
+      "speed_only_edge50_sd": 9.792854537876073,
+      "both_edge50_mean": 1.0,
+      "both_edge50_sd": 2.1908902300206643
+    },
+    "paired_reward_shuffle": {
+      "actual_edge50": {
+        "mean": 10.333333333333334,
+        "sd": 5.988878581726855,
+        "signflip_p": 0.03125
+      },
+      "length_diff": {
+        "mean": -2.2091389993231734,
+        "sd": 1.2472345685426924,
+        "signflip_p": 0.0625
+      },
+      "geometry_only_edge50": {
+        "mean": -13.0,
+        "sd": 7.563068160475615,
+        "signflip_p": 0.0625
+      },
+      "speed_only_edge50": {
+        "mean": 17.166666666666668,
+        "sd": 10.166939887039101,
+        "signflip_p": 0.03125
+      },
+      "slowness_diff": {
+        "mean": 3.461199812029202,
+        "sd": 2.3650453080657727,
+        "signflip_p": 0.0625
+      }
+    }
+  },
+  "rows": {
+    "reward": [
+      {
+        "seed": 0,
+        "mode": "reward",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 181,
+            "edge10": 65,
+            "edge25": 76,
+            "edge50": 88,
+            "peak_value": 0.0011652212124317884,
+            "common05": 58,
+            "common10": 65,
+            "common25": 76,
+            "common50": 88
+          },
+          "B": {
+            "peak": 96,
+            "edge10": 61,
+            "edge25": 69,
+            "edge50": 77,
+            "peak_value": 0.0019385721534490585,
+            "common05": 53,
+            "common10": 57,
+            "common25": 64,
+            "common50": 71
+          },
+          "diff": {
+            "peak": 85,
+            "edge10": 4,
+            "edge25": 7,
+            "edge50": 11,
+            "common05": 5,
+            "common10": 8,
+            "common25": 12,
+            "common50": 17
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.578981264754884,
+          "mean_slowness": 2.0964968774587978,
+          "mean_K": 0.7176489302266434,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 8.000483749861345,
+          "mean_slowness": 1.0448786785239776,
+          "mean_K": 1.085966742184654,
+          "solid_fraction": 0.7387961250361622
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 4.578497514893538,
+          "geometry_component": -2.6024007195907743,
+          "speed_component": 7.18089823448326,
+          "closure_error": -1.0516032489249483e-12
+        },
+        "geometry_only": {
+          "edge25": -11,
+          "edge50": -11,
+          "peak": -9,
+          "A_peak": 0.015089772641658783,
+          "B_peak": 0.00790101382881403
+        },
+        "speed_only": {
+          "edge25": 13,
+          "edge50": 17,
+          "peak": 104,
+          "A_peak": 0.0021811656188219786,
+          "B_peak": 0.0185934379696846
+        },
+        "reconstructed_both": {
+          "edge25": 3,
+          "edge50": 7,
+          "peak": 99,
+          "A_peak": 0.0021811656188219786,
+          "B_peak": 0.012728961184620857
+        },
+        "paths": {
+          "A": [
+            [
+              14,
+              22
+            ],
+            [
+              14,
+              21
+            ],
+            [
+              14,
+              20
+            ],
+            [
+              14,
+              19
+            ],
+            [
+              14,
+              18
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              14,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "mode": "reward",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 185,
+            "edge10": 67,
+            "edge25": 79,
+            "edge50": 92,
+            "peak_value": 0.000993511755950749,
+            "common05": 60,
+            "common10": 67,
+            "common25": 79,
+            "common50": 92
+          },
+          "B": {
+            "peak": 98,
+            "edge10": 58,
+            "edge25": 67,
+            "edge50": 76,
+            "peak_value": 0.001429856987670064,
+            "common05": 50,
+            "common10": 55,
+            "common25": 63,
+            "common50": 71
+          },
+          "diff": {
+            "peak": 87,
+            "edge10": 9,
+            "edge25": 12,
+            "edge50": 16,
+            "common05": 10,
+            "common10": 12,
+            "common25": 16,
+            "common50": 21
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 13.327936241249086,
+          "mean_slowness": 2.2213227068744774,
+          "mean_K": 0.6697814570117867,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 9.630837936925936,
+          "mean_slowness": 1.2578060941362657,
+          "mean_K": 0.9978556716583147,
+          "solid_fraction": 0.3693980625180811
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 3.6970983043231502,
+          "geometry_component": -2.882204669242989,
+          "speed_component": 6.579302973565175,
+          "closure_error": -9.636735853746359e-13
+        },
+        "geometry_only": {
+          "edge25": -11,
+          "edge50": -11,
+          "peak": -9,
+          "A_peak": 0.013982919976115227,
+          "B_peak": 0.007265819236636162
+        },
+        "speed_only": {
+          "edge25": 15,
+          "edge50": 18,
+          "peak": 105,
+          "A_peak": 0.001866028062067926,
+          "B_peak": 0.010911762714385986
+        },
+        "reconstructed_both": {
+          "edge25": 3,
+          "edge50": 6,
+          "peak": 95,
+          "A_peak": 0.001866028062067926,
+          "B_peak": 0.005266553722321987
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "mode": "reward",
+        "mass": 47.44853591918945,
+        "actual": {
+          "A": {
+            "peak": 183,
+            "edge10": 65,
+            "edge25": 76,
+            "edge50": 87,
+            "peak_value": 0.000994480331428349,
+            "common05": 59,
+            "common10": 65,
+            "common25": 76,
+            "common50": 87
+          },
+          "B": {
+            "peak": 99,
+            "edge10": 60,
+            "edge25": 68,
+            "edge50": 77,
+            "peak_value": 0.00130145950242877,
+            "common05": 52,
+            "common10": 57,
+            "common25": 66,
+            "common50": 73
+          },
+          "diff": {
+            "peak": 84,
+            "edge10": 5,
+            "edge25": 8,
+            "edge50": 10,
+            "common05": 7,
+            "common10": 8,
+            "common25": 10,
+            "common50": 14
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.303348492231692,
+          "mean_slowness": 2.0505580820382736,
+          "mean_K": 0.7098154028255551,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 9.338949377184699,
+          "mean_slowness": 1.2196848827052724,
+          "mean_K": 0.8610738185451212,
+          "solid_fraction": 0.5540970937771217
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 2.9643991150469926,
+          "geometry_component": -2.7091579765039513,
+          "speed_component": 5.673557091550113,
+          "closure_error": -8.308909116294672e-13
+        },
+        "geometry_only": {
+          "edge25": -10,
+          "edge50": -10,
+          "peak": -9,
+          "A_peak": 0.017117895185947418,
+          "B_peak": 0.00909429881721735
+        },
+        "speed_only": {
+          "edge25": 12,
+          "edge50": 14,
+          "peak": 104,
+          "A_peak": 0.002413093112409115,
+          "B_peak": 0.011471739038825035
+        },
+        "reconstructed_both": {
+          "edge25": 1,
+          "edge50": 3,
+          "peak": 94,
+          "A_peak": 0.002413093112409115,
+          "B_peak": 0.005585109815001488
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 3,
+        "mode": "reward",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 183,
+            "edge10": 62,
+            "edge25": 73,
+            "edge50": 86,
+            "peak_value": 0.0011246822541579604,
+            "common05": 54,
+            "common10": 60,
+            "common25": 71,
+            "common50": 82
+          },
+          "B": {
+            "peak": 102,
+            "edge10": 61,
+            "edge25": 70,
+            "edge50": 80,
+            "peak_value": 0.0009743909467943013,
+            "common05": 55,
+            "common10": 61,
+            "common25": 70,
+            "common50": 80
+          },
+          "diff": {
+            "peak": 81,
+            "edge10": 1,
+            "edge25": 3,
+            "edge50": 6,
+            "common05": -1,
+            "common10": -1,
+            "common25": 1,
+            "common50": 2
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.670512869856273,
+          "mean_slowness": 2.1117521449756933,
+          "mean_K": 0.8915266959616049,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 8.485281374238571,
+          "straight": 6.0,
+          "tortuosity": 1.4142135623728596,
+          "slowness": 10.42479744273334,
+          "mean_slowness": 1.2285741607086758,
+          "mean_K": 0.924301973854393,
+          "solid_fraction": 0.666666666666588
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 2.245715427122933,
+          "geometry_component": -4.15082537569825,
+          "speed_component": 6.396540802820297,
+          "closure_error": -8.855138844410249e-13
+        },
+        "geometry_only": {
+          "edge25": -14,
+          "edge50": -13,
+          "peak": -12,
+          "A_peak": 0.015912627801299095,
+          "B_peak": 0.00715425331145525
+        },
+        "speed_only": {
+          "edge25": 9,
+          "edge50": 12,
+          "peak": 103,
+          "A_peak": 0.0020578522235155106,
+          "B_peak": 0.012531747110188007
+        },
+        "reconstructed_both": {
+          "edge25": -7,
+          "edge50": -4,
+          "peak": 87,
+          "A_peak": 0.0020578522235155106,
+          "B_peak": 0.004525350406765938
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              14,
+              7
+            ],
+            [
+              13,
+              8
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 4,
+        "mode": "reward",
+        "mass": 47.44853591918945,
+        "actual": {
+          "A": {
+            "peak": 186,
+            "edge10": 68,
+            "edge25": 80,
+            "edge50": 93,
+            "peak_value": 0.0009833096992224455,
+            "common05": 60,
+            "common10": 68,
+            "common25": 80,
+            "common50": 93
+          },
+          "B": {
+            "peak": 101,
+            "edge10": 60,
+            "edge25": 68,
+            "edge50": 77,
+            "peak_value": 0.001117912121117115,
+            "common05": 53,
+            "common10": 58,
+            "common25": 67,
+            "common50": 75
+          },
+          "diff": {
+            "peak": 85,
+            "edge10": 8,
+            "edge25": 12,
+            "edge50": 16,
+            "common05": 7,
+            "common10": 10,
+            "common25": 13,
+            "common50": 18
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 13.214475109408143,
+          "mean_slowness": 2.2024125182343233,
+          "mean_K": 0.6847587234029026,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 8.485281374238571,
+          "straight": 6.0,
+          "tortuosity": 1.4142135623728596,
+          "slowness": 9.616237350922164,
+          "mean_slowness": 1.133284440055937,
+          "mean_K": 1.0228948996711558,
+          "solid_fraction": 0.666666666666588
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 3.598237758485979,
+          "geometry_component": -4.14507276027152,
+          "speed_component": 7.743310518756429,
+          "closure_error": -1.070254995738651e-12
+        },
+        "geometry_only": {
+          "edge25": -13,
+          "edge50": -13,
+          "peak": -11,
+          "A_peak": 0.017189841717481613,
+          "B_peak": 0.007809152826666832
+        },
+        "speed_only": {
+          "edge25": 15,
+          "edge50": 18,
+          "peak": 108,
+          "A_peak": 0.0019102017395198345,
+          "B_peak": 0.01489657536149025
+        },
+        "reconstructed_both": {
+          "edge25": 1,
+          "edge50": 4,
+          "peak": 95,
+          "A_peak": 0.0019102017395198345,
+          "B_peak": 0.005551992915570736
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              18,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 5,
+        "mode": "reward",
+        "mass": 47.44853210449219,
+        "actual": {
+          "A": {
+            "peak": 179,
+            "edge10": 61,
+            "edge25": 72,
+            "edge50": 83,
+            "peak_value": 0.0010648430325090885,
+            "common05": 55,
+            "common10": 61,
+            "common25": 72,
+            "common50": 83
+          },
+          "B": {
+            "peak": 94,
+            "edge10": 58,
+            "edge25": 65,
+            "edge50": 73,
+            "peak_value": 0.0015312735922634602,
+            "common05": 50,
+            "common10": 55,
+            "common25": 62,
+            "common50": 69
+          },
+          "diff": {
+            "peak": 85,
+            "edge10": 3,
+            "edge25": 7,
+            "edge50": 10,
+            "common05": 5,
+            "common10": 6,
+            "common25": 10,
+            "common50": 14
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.307335311008705,
+          "mean_slowness": 2.0512225518344422,
+          "mean_K": 0.8378173677870228,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 8.485281374238571,
+          "straight": 6.0,
+          "tortuosity": 1.4142135623728596,
+          "slowness": 8.668917026069293,
+          "mean_slowness": 1.0216416691127321,
+          "mean_K": 1.1341252898175174,
+          "solid_fraction": 0.833333333333235
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 3.638418284939412,
+          "geometry_component": -3.8184661069420653,
+          "speed_component": 7.456884391880447,
+          "closure_error": -1.0307310560619953e-12
+        },
+        "geometry_only": {
+          "edge25": -13,
+          "edge50": -12,
+          "peak": -12,
+          "A_peak": 0.01785321906208992,
+          "B_peak": 0.008154071867465973
+        },
+        "speed_only": {
+          "edge25": 13,
+          "edge50": 15,
+          "peak": 106,
+          "A_peak": 0.0022110193967819214,
+          "B_peak": 0.017874084413051605
+        },
+        "reconstructed_both": {
+          "edge25": 1,
+          "edge50": 4,
+          "peak": 96,
+          "A_peak": 0.0022110193967819214,
+          "B_peak": 0.007431818172335625
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              18,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      }
+    ],
+    "shuffle": [
+      {
+        "seed": 0,
+        "mode": "shuffle",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 98,
+            "edge10": 59,
+            "edge25": 68,
+            "edge50": 76,
+            "peak_value": 0.001454626559279859,
+            "common05": 54,
+            "common10": 59,
+            "common25": 67,
+            "common50": 76
+          },
+          "B": {
+            "peak": 99,
+            "edge10": 61,
+            "edge25": 69,
+            "edge50": 78,
+            "peak_value": 0.0013798314612358809,
+            "common05": 55,
+            "common10": 61,
+            "common25": 69,
+            "common50": 78
+          },
+          "diff": {
+            "peak": -1,
+            "edge10": -2,
+            "edge25": -1,
+            "edge50": -2,
+            "common05": -1,
+            "common10": -2,
+            "common25": -2,
+            "common50": -2
+          }
+        },
+        "A": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 8.330614002546541,
+          "mean_slowness": 1.087994329146038,
+          "mean_K": 1.0075469493311184,
+          "solid_fraction": 0.5540970937771217
+        },
+        "B": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 8.56200102679398,
+          "mean_slowness": 1.1182139228209145,
+          "mean_K": 0.980563598727169,
+          "solid_fraction": 0.5540970937771217
+        },
+        "decomposition": {
+          "predicted_slowness_diff": -0.2313870242474394,
+          "geometry_component": 0.0,
+          "speed_component": -0.23138702424741014,
+          "closure_error": 2.9254376698872875e-14
+        },
+        "geometry_only": {
+          "edge25": 0,
+          "edge50": 0,
+          "peak": 0,
+          "A_peak": 0.008406152948737144,
+          "B_peak": 0.008406152948737144
+        },
+        "speed_only": {
+          "edge25": 1,
+          "edge50": 1,
+          "peak": -1,
+          "A_peak": 0.015168339014053345,
+          "B_peak": 0.013882129453122616
+        },
+        "reconstructed_both": {
+          "edge25": 1,
+          "edge50": 1,
+          "peak": 0,
+          "A_peak": 0.009113750420510769,
+          "B_peak": 0.008596401661634445
+        },
+        "paths": {
+          "A": [
+            [
+              14,
+              22
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              12,
+              19
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              14,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 1,
+        "mode": "shuffle",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 178,
+            "edge10": 60,
+            "edge25": 68,
+            "edge50": 77,
+            "peak_value": 0.0012030981015414,
+            "common05": 54,
+            "common10": 59,
+            "common25": 67,
+            "common50": 75
+          },
+          "B": {
+            "peak": 178,
+            "edge10": 60,
+            "edge25": 70,
+            "edge50": 80,
+            "peak_value": 0.001051855506375432,
+            "common05": 54,
+            "common10": 60,
+            "common25": 70,
+            "common50": 80
+          },
+          "diff": {
+            "peak": 0,
+            "edge10": 0,
+            "edge25": -2,
+            "edge50": -3,
+            "common05": 0,
+            "common10": -1,
+            "common25": -3,
+            "common50": -5
+          }
+        },
+        "A": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 8.267052892208495,
+          "mean_slowness": 1.0796931249873916,
+          "mean_K": 1.0404218927660742,
+          "solid_fraction": 0.5540970937771217
+        },
+        "B": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 11.228407403763935,
+          "mean_slowness": 1.8714012339603439,
+          "mean_K": 0.945428285747609,
+          "solid_fraction": 0.33333333333327775
+        },
+        "decomposition": {
+          "predicted_slowness_diff": -2.96135451155544,
+          "geometry_component": 2.4447666146377727,
+          "speed_component": -5.40612112619242,
+          "closure_error": 7.926992395823618e-13
+        },
+        "geometry_only": {
+          "edge25": 11,
+          "edge50": 10,
+          "peak": 10,
+          "A_peak": 0.008192364126443863,
+          "B_peak": 0.015596769750118256
+        },
+        "speed_only": {
+          "edge25": -9,
+          "edge50": -12,
+          "peak": -12,
+          "A_peak": 0.014908039942383766,
+          "B_peak": 0.0030473009683191776
+        },
+        "reconstructed_both": {
+          "edge25": 1,
+          "edge50": -1,
+          "peak": -5,
+          "A_peak": 0.008715223520994186,
+          "B_peak": 0.0030473009683191776
+        },
+        "paths": {
+          "A": [
+            [
+              14,
+              22
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              12,
+              19
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              14,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              8
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              15,
+              11
+            ],
+            [
+              15,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 2,
+        "mode": "shuffle",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 180,
+            "edge10": 62,
+            "edge25": 72,
+            "edge50": 82,
+            "peak_value": 0.0010066612157970667,
+            "common05": 56,
+            "common10": 62,
+            "common25": 72,
+            "common50": 81
+          },
+          "B": {
+            "peak": 182,
+            "edge10": 61,
+            "edge25": 71,
+            "edge50": 83,
+            "peak_value": 0.0009701556409709156,
+            "common05": 55,
+            "common10": 61,
+            "common25": 71,
+            "common50": 83
+          },
+          "diff": {
+            "peak": -2,
+            "edge10": 1,
+            "edge25": 1,
+            "edge50": -1,
+            "common05": 1,
+            "common10": 1,
+            "common25": 1,
+            "common50": -2
+          }
+        },
+        "A": {
+          "length": 7.65685424949238,
+          "straight": 6.0,
+          "tortuosity": 1.276142374915184,
+          "slowness": 10.788441567771315,
+          "mean_slowness": 1.4089913711607007,
+          "mean_K": 0.8378389722182704,
+          "solid_fraction": 0.3693980625180811
+        },
+        "B": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.257257354027622,
+          "mean_slowness": 2.04287622567093,
+          "mean_K": 0.7332767614472677,
+          "solid_fraction": 0.33333333333327775
+        },
+        "decomposition": {
+          "predicted_slowness_diff": -1.4688157862563074,
+          "geometry_component": 2.859620748247768,
+          "speed_component": -4.328436534503442,
+          "closure_error": 6.328271240363392e-13
+        },
+        "geometry_only": {
+          "edge25": 11,
+          "edge50": 10,
+          "peak": 9,
+          "A_peak": 0.008643997833132744,
+          "B_peak": 0.01635684072971344
+        },
+        "speed_only": {
+          "edge25": -10,
+          "edge50": -12,
+          "peak": -100,
+          "A_peak": 0.008872553706169128,
+          "B_peak": 0.0023521599359810352
+        },
+        "reconstructed_both": {
+          "edge25": 4,
+          "edge50": 4,
+          "peak": -86,
+          "A_peak": 0.0034865003544837236,
+          "B_peak": 0.0023521599359810352
+        },
+        "paths": {
+          "A": [
+            [
+              14,
+              22
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              12,
+              20
+            ],
+            [
+              12,
+              19
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              13,
+              17
+            ],
+            [
+              14,
+              16
+            ]
+          ],
+          "B": [
+            [
+              14,
+              7
+            ],
+            [
+              14,
+              8
+            ],
+            [
+              14,
+              9
+            ],
+            [
+              14,
+              10
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 3,
+        "mode": "shuffle",
+        "mass": 47.44853210449219,
+        "actual": {
+          "A": {
+            "peak": 182,
+            "edge10": 62,
+            "edge25": 73,
+            "edge50": 85,
+            "peak_value": 0.0011344605591148138,
+            "common05": 53,
+            "common10": 59,
+            "common25": 69,
+            "common50": 79
+          },
+          "B": {
+            "peak": 178,
+            "edge10": 61,
+            "edge25": 72,
+            "edge50": 82,
+            "peak_value": 0.0008483265992254019,
+            "common05": 55,
+            "common10": 61,
+            "common25": 72,
+            "common50": 82
+          },
+          "diff": {
+            "peak": 4,
+            "edge10": 1,
+            "edge25": 1,
+            "edge50": 3,
+            "common05": -2,
+            "common10": -2,
+            "common25": -3,
+            "common50": -3
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.678828310644818,
+          "mean_slowness": 2.113138051773784,
+          "mean_K": 0.8900208442159997,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.250416422405204,
+          "mean_slowness": 2.041736070400527,
+          "mean_K": 0.787514518946278,
+          "solid_fraction": 0.33333333333327775
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 0.42841188823961396,
+          "geometry_component": 0.0,
+          "speed_component": 0.4284118882395429,
+          "closure_error": -7.105427357601002e-14
+        },
+        "geometry_only": {
+          "edge25": 0,
+          "edge50": 0,
+          "peak": 0,
+          "A_peak": 0.016108563169836998,
+          "B_peak": 0.016108565032482147
+        },
+        "speed_only": {
+          "edge25": -2,
+          "edge50": -2,
+          "peak": -1,
+          "A_peak": 0.0020563751459121704,
+          "B_peak": 0.002342711202800274
+        },
+        "reconstructed_both": {
+          "edge25": -2,
+          "edge50": -2,
+          "peak": -1,
+          "A_peak": 0.0020563751459121704,
+          "B_peak": 0.002342711202800274
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              8
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              15,
+              11
+            ],
+            [
+              15,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 4,
+        "mode": "shuffle",
+        "mass": 47.44853973388672,
+        "actual": {
+          "A": {
+            "peak": 184,
+            "edge10": 66,
+            "edge25": 77,
+            "edge50": 89,
+            "peak_value": 0.0009676790796220303,
+            "common05": 58,
+            "common10": 65,
+            "common25": 76,
+            "common50": 88
+          },
+          "B": {
+            "peak": 182,
+            "edge10": 63,
+            "edge25": 74,
+            "edge50": 85,
+            "peak_value": 0.0009372044587507844,
+            "common05": 57,
+            "common10": 63,
+            "common25": 74,
+            "common50": 85
+          },
+          "diff": {
+            "peak": 2,
+            "edge10": 3,
+            "edge25": 3,
+            "edge50": 4,
+            "common05": 1,
+            "common10": 2,
+            "common25": 2,
+            "common50": 3
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 13.224688155455725,
+          "mean_slowness": 2.204114692575587,
+          "mean_K": 0.6837012078611904,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.695687294361225,
+          "mean_slowness": 2.1159478823931845,
+          "mean_K": 0.7474648859350628,
+          "solid_fraction": 0.33333333333327775
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 0.5290008610945005,
+          "geometry_component": 0.0,
+          "speed_component": 0.5290008610944135,
+          "closure_error": -8.704148513061227e-14
+        },
+        "geometry_only": {
+          "edge25": 0,
+          "edge50": 0,
+          "peak": 0,
+          "A_peak": 0.015924083068966866,
+          "B_peak": 0.015924083068966866
+        },
+        "speed_only": {
+          "edge25": 2,
+          "edge50": 2,
+          "peak": 2,
+          "A_peak": 0.0019073979929089546,
+          "B_peak": 0.0021081049926579
+        },
+        "reconstructed_both": {
+          "edge25": 2,
+          "edge50": 2,
+          "peak": 2,
+          "A_peak": 0.0019073979929089546,
+          "B_peak": 0.0021081049926579
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              8
+            ],
+            [
+              15,
+              9
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              15,
+              11
+            ],
+            [
+              15,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      },
+      {
+        "seed": 5,
+        "mode": "shuffle",
+        "mass": 47.44853591918945,
+        "actual": {
+          "A": {
+            "peak": 179,
+            "edge10": 60,
+            "edge25": 71,
+            "edge50": 81,
+            "peak_value": 0.0010419150348752737,
+            "common05": 54,
+            "common10": 60,
+            "common25": 71,
+            "common50": 81
+          },
+          "B": {
+            "peak": 95,
+            "edge10": 59,
+            "edge25": 67,
+            "edge50": 75,
+            "peak_value": 0.0018967681098729372,
+            "common05": 50,
+            "common10": 55,
+            "common25": 61,
+            "common50": 68
+          },
+          "diff": {
+            "peak": 84,
+            "edge10": 1,
+            "edge25": 4,
+            "edge50": 6,
+            "common05": 4,
+            "common10": 5,
+            "common25": 10,
+            "common50": 13
+          }
+        },
+        "A": {
+          "length": 6.0,
+          "straight": 6.0,
+          "tortuosity": 0.9999999999998334,
+          "slowness": 12.316737770927556,
+          "mean_slowness": 2.052789628487584,
+          "mean_K": 0.8362269569186963,
+          "solid_fraction": 0.33333333333327775
+        },
+        "B": {
+          "length": 8.485281374238571,
+          "straight": 6.0,
+          "tortuosity": 1.4142135623728596,
+          "slowness": 8.65742566556569,
+          "mean_slowness": 1.0202873992898727,
+          "mean_K": 1.1240941956637964,
+          "solid_fraction": 0.833333333333235
+        },
+        "decomposition": {
+          "predicted_slowness_diff": 3.6593121053618667,
+          "geometry_component": -3.8187305493678707,
+          "speed_component": 7.478042654728706,
+          "closure_error": -1.0311751452718454e-12
+        },
+        "geometry_only": {
+          "edge25": -13,
+          "edge50": -12,
+          "peak": -11,
+          "A_peak": 0.016109991818666458,
+          "B_peak": 0.007253620773553848
+        },
+        "speed_only": {
+          "edge25": 12,
+          "edge50": 14,
+          "peak": 103,
+          "A_peak": 0.00220889737829566,
+          "B_peak": 0.018617380410432816
+        },
+        "reconstructed_both": {
+          "edge25": 0,
+          "edge50": 2,
+          "peak": 94,
+          "A_peak": 0.00220889737829566,
+          "B_peak": 0.009063716046512127
+        },
+        "paths": {
+          "A": [
+            [
+              15,
+              22
+            ],
+            [
+              15,
+              21
+            ],
+            [
+              15,
+              20
+            ],
+            [
+              15,
+              19
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              16
+            ]
+          ],
+          "B": [
+            [
+              15,
+              7
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              17,
+              9
+            ],
+            [
+              18,
+              10
+            ],
+            [
+              17,
+              11
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              15,
+              13
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

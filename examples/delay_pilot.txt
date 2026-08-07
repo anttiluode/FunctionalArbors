@@ -1,0 +1,14 @@
+Functional Arbor v0.2 six-seed combined pilot
+N=30, lag=10, pairs=10, epochs=2, budget=0.45, credit_strength=5
+
+Reward contrast seeds 0..5:
+0.07735 0.06976 0.03368 0.05514 0.0643165 0.0582863
+Shuffle contrast seeds 0..5:
+-0.00717 -0.00133 -0.01527 0.02447 0.0151982 0.0552749
+Paired reward-shuffle:
+0.08452 0.07109 0.04895 0.03067 0.0491183 0.0030114
+mean 0.0478933, SD 0.0289594, exact two-sided sign-flip p=0.03125
+
+Reward delay means: edge10 5.0, edge25 8.17, edge50 11.5, common10 7.17, common25 10.33
+Shuffle delay means: edge10 0.67, edge25 1.0, edge50 1.17, common10 0.5, common25 0.83
+Requested A-B delay: +10 frames.
