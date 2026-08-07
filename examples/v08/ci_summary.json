@@ -1,0 +1,37 @@
+{
+  "canonical": "GitHub Actions exact-v0.7 subclass",
+  "workflow_run": 31210731500,
+  "artifact_id": 9006608431,
+  "artifact_digest": "sha256:6a72e35b7998aa8f4045f5a270fc4608f44c0f31d6c74bd291875f7b69432ad2",
+  "carrier_instrument": {
+    "global": {"delivered_cells":70,"corr_distance_latency":null,"slope_ticks_per_edge":null},
+    "retrograde": {"delivered_cells":69,"corr_distance_latency":1.0,"slope_ticks_per_edge":1.0},
+    "scrambled_retrograde": {"delivered_cells":69,"corr_distance_latency":1.0,"slope_ticks_per_edge":1.0},
+    "trophic": {"delivered_cells":49,"corr_distance_latency":0.9486289108380144,"slope_ticks_per_edge":1.8321972936264395}
+  },
+  "eligibility_control": {
+    "trials":128,
+    "positive":{"mean_survival":0.9875,"mean_support":0.7040147185325623},
+    "zero":{"mean_survival":0.9390625,"mean_support":0.44999998807907104},
+    "negative":{"mean_survival":0.6328125,"mean_support":0.19598519802093506},
+    "positive_minus_zero":{"mean":0.0484375,"mc_signflip_exceedances":0,"draws":50000},
+    "positive_minus_negative":{"mean":0.3546875,"mc_signflip_exceedances":0,"draws":50000}
+  },
+  "screen8": {
+    "global":{"path":1.75,"edge50":7.5,"contrast":0.06449088631451116},
+    "retrograde":{"path":0.125,"edge50":-1.875,"contrast":-0.022071490715848473},
+    "trophic":{"path":0.0,"edge50":-2.125,"contrast":-0.02587961010843786},
+    "hybrid":{"path":0.125,"edge50":3.25,"contrast":0.002148615931192366},
+    "scrambled_retrograde":{"path":1.25,"edge50":4.875,"contrast":0.0038421589935933656},
+    "no_credit":{"path":0.0,"edge50":-2.125,"contrast":-0.02587961010843786},
+    "global_minus_no_credit":{"contrast_mean":0.09037049642294903,"contrast_p":0.2890625,"edge50_mean":9.625,"edge50_p":0.125},
+    "retrograde_minus_no_credit":{"contrast_mean":0.0038081193925893833,"contrast_p":0.96875,"edge50_mean":0.25,"edge50_p":0.9375}
+  },
+  "retro16_paired_retrograde_minus_no_credit": {
+    "path":{"mean":0.5,"sd":1.3662601021279464,"p":0.25},
+    "edge50":{"mean":2.0625,"sd":11.017977733383441,"p":0.48388671875},
+    "common25":{"mean":2.0625,"sd":8.370334521391603,"p":0.3841552734375},
+    "contrast":{"mean":-0.02509664803218984,"sd":0.2262655781219561,"p":0.6639404296875},
+    "contrast_values":[0.027746874955474454,0.0,0.3685718779402448,-0.11216026766767673,0.04842953812146811,-0.16261307316628312,-0.16553411889476743,0.02602412385225497,-0.2032524988475114,0.0,-0.0800225952825806,-0.3265905092844362,0.48893598475746797,-0.03110053476861452,0.12303027645241493,-0.4030114466824926]
+  }
+}

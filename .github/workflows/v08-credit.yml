@@ -1,0 +1,25 @@
+name: v08 credit transport
+on:
+  pull_request:
+    paths:
+      - 'v08_credit_transport/**'
+      - '.github/workflows/v08-credit.yml'
+jobs:
+  test-v08:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r v08_credit_transport/requirements.txt
+      - run: python v08_credit_transport/selftest.py
+      - run: mkdir -p v08_ci && python v08_credit_transport/credit_instrument.py --out v08_ci/credit_instrument.json
+      - run: python v08_credit_transport/eligibility_control.py --trials 128 --out v08_ci/eligibility_control.json
+      - run: python v08_credit_transport/train.py --seeds 8 --ticks 30 --drive-steps 32 --probe-steps 120 --arms global,retrograde,trophic,hybrid,scrambled_retrograde,no_credit --out v08_ci/screen8
+      - run: python v08_credit_transport/train.py --seeds 16 --ticks 30 --drive-steps 32 --probe-steps 120 --arms retrograde,no_credit --out v08_ci/retro16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v08-receipts
+          path: v08_ci/
