@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 import os, sys, numpy as np
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+HERE=os.path.dirname(os.path.abspath(__file__))
+ROOT=os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+sys.path.insert(0, HERE)
 from v09_causal_eligibility.eligibility_arbor import V09Config, CausalEligibilityArbor
-from v09_1_credit_dose.sweep import run_dose
+from sweep import run_dose
 
 class A:
     lag=20; probe_steps=120; ticks=9; eval_interval=3; drive_steps=32; reward_gain=4.0; base_retro_gain=.48
@@ -18,6 +21,9 @@ assert abs(r0['retrograde_gain']) < 1e-12
 assert abs(r1['retrograde_gain']-.48) < 1e-12
 assert abs(r4['retrograde_gain']-1.92) < 1e-12
 assert r0['receipt']['credit_mass'] == 0.0
+# With identical RNG and only gain changed, structural proposals/tags should be identical
+# until support-dependent retraction causes genuine trajectory divergence. In this short
+# selftest window the tag exposure should still match.
 assert r1['receipt']['tag_mass'] == r4['receipt']['tag_mass'], (r1['receipt']['tag_mass'],r4['receipt']['tag_mass'])
 assert r0['receipt']['final_mass']==70 and r1['receipt']['final_mass']==70 and r4['receipt']['final_mass']==70
 print('bootstrap',boot)
