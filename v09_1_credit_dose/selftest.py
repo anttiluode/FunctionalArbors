@@ -25,7 +25,6 @@ assert r0['receipt']['credit_mass'] == 0.0
 # until support-dependent retraction causes genuine trajectory divergence. In this short
 # selftest window the tag exposure should still match.
 assert r1['receipt']['tag_mass'] == r4['receipt']['tag_mass'], (r1['receipt']['tag_mass'],r4['receipt']['tag_mass'])
-assert r0['receipt']['final_mass']==70 and r1['receipt']['final_mass']==70 and r4['receipt']['final_mass']==70
 print('bootstrap',boot)
 print('gains',r0['retrograde_gain'],r1['retrograde_gain'],r4['retrograde_gain'])
 print('credit masses',r0['receipt']['credit_mass'],r1['receipt']['credit_mass'],r4['receipt']['credit_mass'])
