@@ -1,0 +1,25 @@
+name: v09 causal eligibility
+
+on:
+  pull_request:
+    paths:
+      - 'v09_causal_eligibility/**'
+      - '.github/workflows/v09-causal-eligibility.yml'
+  workflow_dispatch:
+
+jobs:
+  test-v09:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r v09_causal_eligibility/requirements.txt
+      - run: python v09_causal_eligibility/selftest.py
+      - run: mkdir -p v09_ci && python v09_causal_eligibility/tag_instrument.py --ticks 18 --out v09_ci/tag_instrument.json
+      - run: python v09_causal_eligibility/train.py --seeds 8 --ticks 36 --drive-steps 40 --probe-steps 150 --arms activity,event,event_shuffle,competition,competition_shuffle,timing,timing_shuffle,no_credit --out v09_ci/screen8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v09-receipts
+          path: v09_ci/

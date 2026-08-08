@@ -1,0 +1,23 @@
+name: v09 event confirmation
+
+on:
+  pull_request:
+    paths:
+      - 'v09_causal_eligibility/**'
+      - '.github/workflows/v09-event-confirm.yml'
+  workflow_dispatch:
+
+jobs:
+  event-confirm:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r v09_causal_eligibility/requirements.txt
+      - run: mkdir -p v09_event_ci && python v09_causal_eligibility/train.py --seeds 16 --ticks 36 --drive-steps 40 --probe-steps 150 --arms event,event_shuffle,no_credit --out v09_event_ci/event16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v09-event16
+          path: v09_event_ci/
