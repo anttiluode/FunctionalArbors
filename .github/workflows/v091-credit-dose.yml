@@ -1,0 +1,22 @@
+name: v091 credit dose
+on:
+  pull_request:
+    paths:
+      - 'v09_1_credit_dose/**'
+      - '.github/workflows/v091-credit-dose.yml'
+  workflow_dispatch:
+jobs:
+  dose:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r v09_causal_eligibility/requirements.txt
+      - run: python v09_1_credit_dose/selftest.py
+      - run: mkdir -p v091_ci && python v09_1_credit_dose/sweep.py --seeds 16 --ticks 36 --drive-steps 40 --probe-steps 150 --out v091_ci/dose16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v091-dose16
+          path: v091_ci/
