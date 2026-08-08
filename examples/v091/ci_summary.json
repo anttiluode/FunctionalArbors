@@ -1,0 +1,27 @@
+{
+  "canonical_run": 31238081016,
+  "seeds": 16,
+  "multipliers": [0.0, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0],
+  "mean": {
+    "0x": {"credit_mass": 0.0, "contrast": 0.0188397413, "edge50": 5.125, "length_diff": 0.4375},
+    "0.125x": {"credit_mass": 0.2469423850, "contrast": 0.0249204799, "edge50": 8.125, "length_diff": 0.4375},
+    "0.25x": {"credit_mass": 0.4930701431, "contrast": 0.0185314108, "edge50": 7.3125, "length_diff": 0.4375},
+    "0.5x": {"credit_mass": 0.9797071890, "contrast": 0.0154884348, "edge50": 7.1875, "length_diff": 0.9375},
+    "1x": {"credit_mass": 1.9920692566, "contrast": 0.0597777289, "edge50": 9.5625, "length_diff": 1.4375},
+    "2x": {"credit_mass": 3.9410558883, "contrast": 0.0751727644, "edge50": 5.625, "length_diff": 0.5625},
+    "4x": {"credit_mass": 7.7855486335, "contrast": 0.0391042010, "edge50": 3.875, "length_diff": 0.6875}
+  },
+  "registered": {
+    "1x_minus_0x": {"contrast_mean": 0.0409379875, "contrast_p": 0.4344482422, "edge50_mean": 4.4375, "edge50_p": 0.3049316406},
+    "1x_minus_4x": {"contrast_mean": 0.0206735278, "contrast_p": 0.7475585938, "edge50_mean": 5.6875, "edge50_p": 0.1326293945},
+    "4x_minus_0x": {"contrast_mean": 0.0202644597, "contrast_p": 0.6447753906, "edge50_mean": -1.25, "edge50_p": 0.6623535156}
+  },
+  "quadratic": {"q2_mean": -0.0101964830, "q2_signflip_p": 0.1790466309, "concave_seeds": 7, "convex_seeds": 9},
+  "unregistered_descriptive": {
+    "2x_minus_0x_contrast_mean": 0.0563330230,
+    "2x_minus_0x_p": 0.1666870117,
+    "2x_minus_4x_contrast_mean": 0.0360685633,
+    "2x_minus_4x_p": 0.4140625
+  },
+  "verdict": "Delivered credit dose is a real reporting confound, but the 16-seed sweep does not support the claim that v0.9 was merely an inverted-U dose/temperature effect."
+}
