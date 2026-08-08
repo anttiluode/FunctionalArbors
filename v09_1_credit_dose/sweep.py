@@ -4,15 +4,10 @@ import argparse, itertools, json, math, os, sys, time
 from pathlib import Path
 import numpy as np
 
-if __package__ in (None, ''):
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    from v09_causal_eligibility.eligibility_arbor import V09Config, CausalEligibilityArbor
-    from v09_causal_eligibility.train import launch_for_arm
-    from v07_persistent_ephaptic.task import DelayTask
-else:
-    from ..v09_causal_eligibility.eligibility_arbor import V09Config, CausalEligibilityArbor
-    from ..v09_causal_eligibility.train import launch_for_arm
-    from ..v07_persistent_ephaptic.task import DelayTask
+ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT not in sys.path: sys.path.insert(0, ROOT)
+from v09_causal_eligibility.eligibility_arbor import V09Config, CausalEligibilityArbor
+from v07_persistent_ephaptic.task import DelayTask
 
 DEFAULT_MULTIPLIERS = (0.0, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0)
 
@@ -32,6 +27,12 @@ def label(mult):
     return ('g' + ('%.3f' % float(mult)).rstrip('0').rstrip('.')).replace('.', 'p')
 
 
+def launch_exact_event(m, reward, since_tick):
+    tag=m.event_tag(since_tick)
+    m.launch_tagged_retrograde(reward, tag, 'event')
+    return {'event_mass': float(tag.sum())}
+
+
 def run_dose(base, mult, args, seed):
     # The only experimental variable is v0.8's retrograde support gain.
     m = base.copy()
@@ -46,11 +47,10 @@ def run_dose(base, mult, args, seed):
         events = m.structural_tick('coherent')
         raw = reward = 0.0; tag_info = {}
         if (tick + 1) % args.eval_interval == 0:
-            new, _, _ = task.contrast(); now_delay = task.delays()
-            raw = float(new - score)
+            new, _, _ = task.contrast(); raw = float(new - score)
             reward = math.tanh(args.reward_gain * raw)
-            # Exact v0.9 event-cell tag; only carrier gain differs.
-            tag_info = launch_for_arm(m, 'event', reward, last_eval_tick, args.lag, now_delay['edge50'])
+            # Exact v0.9 event-cell semantics; only retrograde gain differs.
+            tag_info = launch_exact_event(m, reward, last_eval_tick)
             score = float(new); last_eval_tick = int(m.dev_tick)
         m.background_support_tick()
         m.transport_credit_tick('retrograde')
@@ -98,22 +98,16 @@ def summarize(rows, mults):
                 q[k] = dict(mean=float(d.mean()), sd=float(d.std(ddof=1) if len(d)>1 else 0), p=signflip(d), values=d.tolist())
             out['paired_vs_zero'][lab] = q
 
-    # Descriptive repeated-seed quadratic on ACTUALLY DELIVERED credit mass.
-    # The coefficient is not treated as proof by itself; the registered extreme
-    # comparisons (1x vs 0 and 1x vs 4x) remain the main dose-confound test.
-    q2=[]; q1=[]; peaks=[]
+    q2=[]; peaks=[]
     for z in valid:
         x=np.asarray([metric(z['doses'][label(m)],'credit_mass') for m in mults],float)
         y=np.asarray([metric(z['doses'][label(m)],'contrast') for m in mults],float)
         if len(np.unique(np.round(x,9))) >= 3:
-            c=np.polyfit(x,y,2); q2.append(float(c[0])); q1.append(float(c[1]))
+            c=np.polyfit(x,y,2); q2.append(float(c[0]))
             peaks.append(float(-c[1]/(2*c[0])) if c[0] < -1e-12 else float('nan'))
     out['quadratic'] = dict(q2_values=q2, q2_mean=float(np.mean(q2)) if q2 else float('nan'),
-                            q2_p=signflip(q2) if q2 else float('nan'),
-                            peak_credit_values=peaks)
+                            q2_p=signflip(q2) if q2 else float('nan'), peak_credit_values=peaks)
 
-    # Registered key comparison: default 1x should beat both zero and 4x for a
-    # genuine inverted-U around the v0.9 dose.
     for a,b,name in ((1.0,0.0,'one_vs_zero'),(1.0,4.0,'one_vs_four'),(4.0,0.0,'four_vs_zero')):
         la,lb=label(a),label(b)
         if la in out['dose'] and lb in out['dose']:
