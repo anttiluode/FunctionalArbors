@@ -1,0 +1,34 @@
+{
+  "canonical_screen_run": 31236823133,
+  "canonical_event16_run": 31236949078,
+  "screen8": {
+    "activity": {"contrast": -0.0164, "edge50": 2.62, "path_diff": 0.75, "mean_credit_mass": 9.307},
+    "event": {"contrast": 0.0851, "edge50": 12.38, "path_diff": 1.38, "mean_tag_mass": 27.9, "mean_credit_mass": 2.271},
+    "event_shuffle": {"contrast": 0.0402, "edge50": 11.25, "path_diff": 0.88, "mean_tag_mass": 27.4, "mean_credit_mass": 2.195},
+    "competition": {"contrast": 0.0671, "edge50": 11.00, "path_diff": 1.38, "mean_tag_mass": 38.0, "mean_credit_mass": 2.626},
+    "competition_shuffle": {"contrast": 0.0505, "edge50": 12.75, "path_diff": 1.00, "mean_tag_mass": 37.6, "mean_credit_mass": 2.828},
+    "timing": {"contrast": 0.0208, "edge50": 10.12, "path_diff": 0.88, "mean_tag_mass": 1.6, "mean_credit_mass": 0.148},
+    "timing_shuffle": {"contrast": 0.0208, "edge50": 10.12, "path_diff": 0.88, "mean_tag_mass": 1.6, "mean_credit_mass": 0.109},
+    "no_credit": {"contrast": 0.0208, "edge50": 10.12, "path_diff": 0.88},
+    "paired": {
+      "activity_minus_no_credit": {"contrast": -0.0371, "p_contrast": 0.4688, "edge50": -7.50, "p_edge50": 0.0781},
+      "event_minus_event_shuffle": {"contrast": 0.0448, "p_contrast": 0.5625, "edge50": 1.12, "p_edge50": 0.8750},
+      "event_minus_no_credit": {"contrast": 0.0643, "p_contrast": 0.1875, "edge50": 2.25, "p_edge50": 0.6875},
+      "competition_minus_competition_shuffle": {"contrast": 0.0166, "p_contrast": 0.8438, "edge50": -1.75, "p_edge50": 0.7891},
+      "competition_minus_no_credit": {"contrast": 0.0463, "p_contrast": 0.4844, "edge50": 0.88, "p_edge50": 0.8594},
+      "timing_minus_timing_shuffle": {"contrast": 0.0, "p_contrast": 1.0, "edge50": 0.0, "p_edge50": 1.0}
+    }
+  },
+  "event16": {
+    "event": {"contrast": 0.05978, "edge50": 9.5625, "common25": 10.9375, "path_diff": 1.4375, "mean_tag_mass": 27.875, "mean_credit_mass": 1.9921},
+    "event_shuffle": {"contrast": 0.01575, "edge50": 6.125, "common25": 5.6875, "path_diff": 0.5625, "mean_tag_mass": 27.625, "mean_credit_mass": 1.8841},
+    "no_credit": {"contrast": 0.01884, "edge50": 5.125, "common25": 4.375, "path_diff": 0.4375},
+    "paired_event_minus_event_shuffle": {"contrast": 0.04403, "p_contrast": 0.31439, "edge50": 3.4375, "p_edge50": 0.46216},
+    "paired_event_minus_no_credit": {"contrast": 0.04094, "p_contrast": 0.43445, "edge50": 4.4375, "p_edge50": 0.30493}
+  },
+  "tag_instrument": {
+    "mean_graph_distance_error_cells": 0.8889,
+    "mean_age_error_ticks": 7.2778,
+    "note": "Sparsity is exact and graph distance is close; age matching is imperfect, especially in the first evaluation window where no alternate newborn cells exist. Do not over-interpret event-vs-shuffle as a pure location test."
+  }
+}
