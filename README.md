@@ -84,37 +84,56 @@ The v0.6 wall sentence is:
 
 See [`v06_ephaptic_growth/README.md`](v06_ephaptic_growth/README.md), [`docs/LEDGER_V06.md`](docs/LEDGER_V06.md), and [`docs/NEXT_V07.md`](docs/NEXT_V07.md).
 
-## Run v0.5
-
-```bat
-python3.13 v05_free_arbor/selftest.py
-python3.13 v05_free_arbor/train.py --seeds 16 --lag 20 --mutations 28 --bootstrap-mass 90 --arms reward,shuffle --out free16
-```
-
-Path-only mechanism check:
-
-```bat
-python3.13 v05_free_arbor/path_only.py runA/free_results.json runB/free_results.json --lag 20 --out path_only.json
-```
-
-## Run v0.6
-
-```bat
-python3.13 v06_ephaptic_growth/selftest.py
-python3.13 v06_ephaptic_growth/train.py --seeds 16 --lag 20 --mutations 18 --bootstrap-mass 70 --cone-attempts 8 --cone-max-steps 10 --arms full,no_ephaptic,magnitude_only,phase_shuffle,shuffle_credit,no_credit --out v06_main
-python3.13 v06_ephaptic_growth/field_demo.py --seed 0 --out ephaptic_field.png
-```
-
-MIT. Experimental computational morphogenesis; not a model of literal neuronal development.
-
-## v0.7 — explicit extracellular field + persistent development
-
+### v0.7 — explicit extracellular field + persistent development
 `v07_persistent_ephaptic/` replaces the blurred v0.6 field with a grounded quasi-static extracellular solve driven by explicit current-source density, and replaces atomic growth/reconnect/prune episodes with persistent one-cell growth cones plus separate slow stabilization and retraction.
 
 The 16-seed short receipt preserves a useful negative: coherent soma-locked phase is indistinguishable from phase-scrambled guidance on final task contrast (`+0.0014`, p=.9847). Extracellular information still improves reconnection search versus no-field (`+0.0644 reconnections/extension`, p=.0373), but coherent and magnitude-only search rates are the same.
 
 An 8-seed longer-development check suggests directional field guidance can improve final task contrast over no-field (`+0.1435`, p=.0078) and magnitude-only (`+0.1257`, p=.0469), while phase-scramble remains identical to coherent and phase reversal is harmful. So **field geometry/direction may matter; correct absolute phase still has not earned a role**.
 
-The slow delayed soma-credit rule itself is not yet robust against no-credit. That becomes the next wall.
+The slow delayed soma-credit rule itself is not yet robust against no-credit. See `v07_persistent_ephaptic/README.md` and `docs/LEDGER_V07.md`.
 
-See `v07_persistent_ephaptic/README.md` and `docs/LEDGER_V07.md`.
+### v0.8 — physical credit transport works, free assignment does not
+`v08_credit_transport/` freezes the v0.7 wave, extracellular solve and persistent growth, then adds explicit delayed return channels from soma to structure. Graph-retrograde credit moves exactly one arbor edge per slow tick; a separate trophic carrier diffuses through the bath.
+
+The carrier itself is calibrated and a deliberately correct branch tag is a strong positive control: positive consequence keeps the tagged branch alive much more often than negative consequence. But free retrograde learning remains null. In 16 paired seeds, retrograde minus no-credit gives contrast `-0.0251` (`p=.6639`) and edge50 `+2.063` (`p=.4839`).
+
+So v0.8 moves the bottleneck from **transport** to **eligibility**: reward can get back to a branch, but recent activity is not a causal enough mark of which structural change made the soma better.
+
+See `v08_credit_transport/README.md` and `docs/LEDGER_V08.md`.
+
+### v0.9 — exact structural-event tags are still too coarse
+`v09_causal_eligibility/` freezes the v0.8 retrograde carrier and varies only what is tagged before delayed consequence returns: broad activity, exact newly born cells, reconnect bypass-vs-shortcut competition, and a sparse signed timing-event mark, each with appropriate shuffled/no-credit controls where possible.
+
+The 8-seed screen gave a suggestive event-cell trend, so it was expanded without gain changes. In the 16-seed confirmation:
+
+```text
+                         event     shuffled-event    no-credit
+mean contrast            +0.0598       +0.0157        +0.0188
+mean edge50              +9.5625       +6.1250        +5.1250
+
+paired event - shuffled
+contrast                 +0.0440   p=.3144
+edge50                   +3.4375   p=.4622
+
+paired event - no-credit
+contrast                 +0.0409   p=.4344
+edge50                   +4.4375   p=.3049
+```
+
+So **remembering exactly which cells were born is still not sufficient for robust free credit assignment**. Reconnect competition tags also fail their matched screen. The signed timing tag is not counted as killed because it was too sparse/late to deliver enough credit to exercise the mechanism.
+
+The next mark should be closer to causation itself: measure local transport before and after a structural event and tag the **flow redistribution** it actually caused, e.g. `event_mask × (J_after - J_before)`, rather than simply activity or birth identity.
+
+See `v09_causal_eligibility/README.md`, `docs/LEDGER_V09.md`, and `examples/v09/ci_summary.json`.
+
+## Run examples
+
+```bat
+python3.13 v07_persistent_ephaptic/selftest.py
+python3.13 v08_credit_transport/selftest.py
+python3.13 v09_causal_eligibility/selftest.py
+python3.13 v09_causal_eligibility/train.py --seeds 16 --ticks 36 --drive-steps 40 --probe-steps 150 --arms event,event_shuffle,no_credit --out v09_event16
+```
+
+MIT. Experimental computational morphogenesis; not a model of literal neuronal development.
